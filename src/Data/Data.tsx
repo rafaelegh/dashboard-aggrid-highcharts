@@ -116,3 +116,37 @@ export const UpdatesData = [
     time: "2 hours ago",
   },
 ];
+
+export interface ITableData {
+  product: string; 
+  trackingId: number;
+  date: string;
+  status: string;
+}
+
+export const TableData: ITableData[] = [
+  { 
+    product: "Big Baza Bang", 
+    trackingId: 18908424, 
+    date: "2 March 2022", 
+    status: "Approved" 
+  },
+  {
+    product: "Lasania Chiken Fri",
+    trackingId: 18908424,
+    date: "2 March 2022",
+    status: "Pending"
+  },
+  {
+    product: "Mouth Freshner",
+    trackingId: 18908424,
+    date: "2 March 2022",
+    status: "Approved"
+  },
+  {
+    product: "Cupcake",
+    trackingId: 18908424,
+    date: "2 March 2022",
+    status: "Delivered"
+  },
+]
