@@ -4,6 +4,9 @@ import { cardsDataType } from '../../Data/Data';
 import {AiOutlineClose} from 'react-icons/ai';
 import './ExpandedCard.css';
 import { SeriesAreaOptions } from 'highcharts';
+import HC_exporting from 'highcharts/modules/exporting';
+
+HC_exporting(Highcharts);
 
 interface ExpandedCardProps extends cardsDataType {
     setExpanded: () => void;
@@ -53,7 +56,7 @@ const chartOptions = {
 
 const options: Highcharts.Options = {
     chart: {
-        backgroundColor: 'transparent'
+        backgroundColor: 'transparent',
     },
     title:{
         text: undefined,
@@ -76,14 +79,40 @@ const options: Highcharts.Options = {
         dataLabels: {
             enabled: false // set dataLabels to false
         },
+        marker: {
+            states: {
+                hover: {
+                    fillColor: Highcharts.getOptions().colors![0] as string
+                }
+            }
+        }
     }],
     xAxis: {
-        type: 'datetime'   
+        type: 'datetime',
+        labels: {
+            style: {
+                color: 'black'
+            }
+        }   
     },
     yAxis: {
         title: {
             text: ''
         },
+        labels: {
+            style: {
+                color: 'black'
+            }
+        }
+    },
+    exporting: {
+        buttons: {
+            contextButton: {
+                theme: {
+                    fill: 'transparent'
+                }
+            }
+        }
     },
 
 }
@@ -106,8 +135,8 @@ export default function ExpandedCard({
 }: ExpandedCardProps) {
 
     const newSeries =  series[0].data.map((value, index) => [Date.parse(xValues[index]), value]);
-    console.log(newSeries);
     (options.series![0] as SeriesAreaOptions).data = newSeries;
+    (options.series![0] as SeriesAreaOptions).name = series[0].name;
     const newChartOptions = Object.assign({}, options);
     
     return (
