@@ -68,8 +68,3 @@
     background: var(--pink);
     margin-right: calc(1rem - 8px);
 }
-
-.icon{
-    height: 1.5rem;
-    width: 1.5rem;
-}

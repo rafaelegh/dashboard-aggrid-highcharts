@@ -1,9 +1,11 @@
 // Sidebar imports
 
-import {BiHomeAlt} from 'react-icons/bi'
+import { BiHomeAlt, BiMoneyWithdraw } from 'react-icons/bi'
 import {HiOutlineClipboardList} from 'react-icons/hi'
 import { FiUsers, FiPackage } from 'react-icons/fi'
 import {MdOutlineAnalytics} from 'react-icons/md'
+import { RiMoneyDollarBoxLine } from 'react-icons/ri'
+
 // Analytics Cards imports
 
 // Recent Card Imports
@@ -43,6 +45,7 @@ export const SidebarData: SiderbarData[]  = [
 ];
 
 // Analytics Cards Data
+
 export const cardsData = [
   {
     title: "Sales",
@@ -52,7 +55,7 @@ export const cardsData = [
     },
     barValue: 70,
     value: "25,970",
-    //png: UilUsdSquare,
+    png: RiMoneyDollarBoxLine,
     series: [
       {
         name: "Sales",
@@ -68,7 +71,7 @@ export const cardsData = [
     },
     barValue: 80,
     value: "14,270",
-    //png: UilMoneyWithdrawal,
+    png: BiMoneyWithdraw,
     series: [
       {
         name: "Revenue",
@@ -85,7 +88,7 @@ export const cardsData = [
     },
     barValue: 60,
     value: "4,270",
-    //png: UilClipboardAlt,
+    png: HiOutlineClipboardList,
     series: [
       {
         name: "Expenses",
@@ -94,6 +97,7 @@ export const cardsData = [
     ],
   },
 ];
+export type cardsDataType = typeof cardsData[0];
 
 // Recent Update Card Data
 export const UpdatesData = [
