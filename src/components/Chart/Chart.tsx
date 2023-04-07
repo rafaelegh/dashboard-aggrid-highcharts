@@ -85,9 +85,10 @@ interface ChartProps {
     disableYAxis?: boolean;
     lineColor?: string;
     series: cardsDataType['series'];
+    height?: number;
 }
 
-export default function Chart({ disableYAxis = false, lineColor = 'white', series }: ChartProps) {
+export default function Chart({ disableYAxis = false, lineColor = 'white', series, height }: ChartProps) {
 
     const newSeries = series[0].data.map((value, index) => [Date.parse(xValues[index]), value]);
 
@@ -96,6 +97,7 @@ export default function Chart({ disableYAxis = false, lineColor = 'white', serie
     (newChartOptions.series![0] as SeriesAreaOptions).name = series[0].name;
     (newChartOptions.series![0] as SeriesAreaOptions).color = lineColor;
     (newChartOptions.yAxis as YAxisOptions).labels!.enabled = !disableYAxis;
+    newChartOptions.chart!.height = height ?? 'auto'
 
     return (
         <HighchartsReact

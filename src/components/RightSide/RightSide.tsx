@@ -1,3 +1,4 @@
+import CustomerReview from '../CustomerReview/CustomerReview'
 import Updates from '../Updates/Updates'
 
 export default function RightSide() {
@@ -9,6 +10,7 @@ export default function RightSide() {
         </div>
         <div>
             <h3>Customer Review</h3>
+            <CustomerReview />
         </div>
     </div>
   )

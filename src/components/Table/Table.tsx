@@ -26,13 +26,12 @@ export default function Table() {
         sortable: true,
         filter: true,
         resizable: true,
-        width: rowWidth
     }
 
     return (
     <div className="table">
         <h3>Recent Orders</h3>
-            <div className="ag-theme-alpine" style={{ width: "100%", height: "70%" }}>
+            <div className="ag-theme-alpine" style={{ width: "100%", height: "calc(100% - 60px)" }}>
                 <AgGridReact<ITableData>
                     columnDefs={columnDefs}
                     rowData={rowData}

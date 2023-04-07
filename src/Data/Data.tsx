@@ -153,4 +153,13 @@ export const TableData: ITableData[] = [
     date: "2 March 2022",
     status: "Delivered"
   },
-]
+];
+
+export const customerReviewData = {
+  series: [
+    {
+      name: "Review",
+      data: [10, 50, 30, 90, 40, 120, 100],
+    },
+  ],
+}
