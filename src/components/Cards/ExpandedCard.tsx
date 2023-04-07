@@ -159,5 +159,5 @@ export default function ExpandedCard({
             </div>
             <span>Last 24 hours</span>
         </div>  
-        );
+    );
 }
